@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://SreenandhaAchuthan.github.io/fourth_wing_round1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SreenandhaAchuthan/fourth_wing_round1.git"
+  },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
