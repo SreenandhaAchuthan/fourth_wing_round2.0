@@ -1,0 +1,91 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+  
+    // Existing WOC collection
+    match /WOC/{document} {
+      allow create: if true;  // Anyone can submit
+      allow read, update, delete: if false;  // Only via Firebase Console
+    }
+    
+    // New Round 2 collection for Wings of Code event
+    match /round2/{document} {
+      allow create: if true; // Anyone can submit scores
+      allow read: if true;   // Publicly readable for Leaderboard
+      allow update: if true; // Allow saving progress
+    }
+
+    // Round 2 Leaderboard nested collection
+    match /round2/leaderboard/entries/{entry} {
+      allow create: if true;
+      allow read: if true;
+      allow update: if true;
+    }
+
+    // Round 1 collection for MCQ exam results
+    match /round1/{document} {
+      allow create: if true; // Anyone can submit exam results
+      allow read: if true;   // Publicly readable for results/leaderboard
+      allow update: if true; // Allow updating exam results (for completion)
+      allow delete: if false; // No deleting exam submissions
+    }
+
+    // Round 1 Leaderboard nested collection (Fix for permission error)
+    match /round1/leaderboard/entries/{entry} {
+      allow create: if true;
+      allow read: if true;
+      allow update: if true;
+    }
+
+    // Helper function to check if user is office bearer
+    function isOfficeBearer() {
+      return request.auth != null && 
+        exists(/databases/$(database)/documents/users/$(request.auth.uid)) &&
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'office_bearer';
+    }
+    
+    // Helper function to check if user is mentor
+    function isMentor() {
+      return request.auth != null && 
+        exists(/databases/$(database)/documents/users/$(request.auth.uid)) &&
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'mentor';
+    }
+    
+    // Events collection
+    match /events/{eventId} {
+      // Allow anyone to read events (for public event listing and registration)
+      allow read: if true;
+      
+      // Allow anyone to update events (for public registration - adding to registrations array)
+      // This allows unauthenticated users to register for events
+      // Also allows office bearers to update event details (title, date, description, etc.)
+      allow update: if true;
+      
+      // Only office bearers can create and delete events
+      allow create, delete: if isOfficeBearer();
+    }
+    
+    // Tasks collection
+    match /tasks/{taskId} {
+      // Mentors can read and write their own tasks
+      allow read, write: if isMentor();
+      
+      // Office bearers can read all tasks
+      allow read: if isOfficeBearer();
+    }
+    
+    // Users collection
+    match /users/{userId} {
+      // Users can read and write their own data
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+      
+      // Office bearers can read all user data (for management purposes)
+      allow read: if isOfficeBearer();
+    }
+    
+    // Default deny all other collections
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
