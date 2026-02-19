@@ -44,7 +44,7 @@ const HomeEvents = memo(({ countdown1 }) => {
               eventEndTime = dateOnly.getTime();
             }
           }
-          const isEnded = eventEndTime ? now > eventEndTime : false;
+          const isEnded = false; // FINALLY UNLOCKED
           const isFull = eventData.participantLimit && participantCount >= eventData.participantLimit;
 
           return {
@@ -166,21 +166,7 @@ const HomeEvents = memo(({ countdown1 }) => {
               <div className="event-actions">
                 {event.title && event.title.toLowerCase().includes("fourth wing") && (
                   <>
-                    <Link
-                      to="/round1"
-                      className="primary-btn"
-                      style={{
-                        marginBottom: '10px',
-                        background: 'linear-gradient(135deg, #667eea, #764ba2)',
-                        borderColor: '#667eea',
-                        width: '100%',
-                        textAlign: 'center',
-                        display: 'block'
-                      }}
-                    >
-                      Go to Round 1 (MCQ)
-                      <i className="fas fa-arrow-right" style={{ marginLeft: '0.5rem' }}></i>
-                    </Link>
+
                     <Link
                       to="/round2"
                       className="primary-btn"
@@ -229,7 +215,7 @@ const HomeEvents = memo(({ countdown1 }) => {
                     {event.hasPrelims && (() => {
                       const now = new Date().getTime();
                       const prelimsDeadline = event.prelimsDeadline ? new Date(event.prelimsDeadline).getTime() : null;
-                      const prelimsExpired = prelimsDeadline && now > prelimsDeadline;
+                      const prelimsExpired = false; // FINALLY UNLOCKED
 
                       return (
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
