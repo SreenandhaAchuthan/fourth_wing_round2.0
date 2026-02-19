@@ -6,6 +6,8 @@
     "type": "git",
     "url": "https://github.com/SreenandhaAchuthan/fourth_wing_round2.0.git"
   },
+  "homepage": "https://SreenandhaAchuthan.github.io/fourth_wing_round2.0",
+
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
