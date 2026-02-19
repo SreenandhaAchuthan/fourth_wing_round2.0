@@ -5,7 +5,7 @@ const UserEntryScreen = ({ onStart, initialName = '' }) => {
     const [rollNo, setRollNo] = useState('');
 
     // Toggle this to UNLOCK round 2
-    const IS_LOCKED = true;
+    const IS_LOCKED = false;
 
     useEffect(() => {
         if (initialName) {

@@ -40,7 +40,7 @@ const Round2Manager = () => {
     // Fullscreen & Warning State
     const [isFullscreen, setIsFullscreen] = useState(true);
     const [showWarning, setShowWarning] = useState(false);
-    const [warningTime, setWarningTime] = useState(5);
+    const [warningTime, setWarningTime] = useState(10);
     const warningTimerRef = useRef(null);
 
     // New State for features
@@ -143,7 +143,7 @@ const Round2Manager = () => {
             if (!document.fullscreenElement && gameState === 'playing') {
                 setIsFullscreen(false);
                 setShowWarning(true);
-                setWarningTime(5);
+                setWarningTime(10);
             } else {
                 setIsFullscreen(true);
                 setShowWarning(false);

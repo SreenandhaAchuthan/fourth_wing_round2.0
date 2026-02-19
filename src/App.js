@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import 'aos/dist/aos.css';
 import 'font-awesome/css/font-awesome.min.css';
 import FossApp from './foss';
@@ -118,7 +118,7 @@ const App = () => {
           <Route path="/events" element={<Events />} />
           <Route path="/events/:id" element={<EventRegistration />} />
           <Route path="/exam" element={<ExamPage />} />
-          <Route path="/round1" element={<Round1Exam />} />
+          <Route path="/round1" element={<Navigate to="/" replace />} />
           <Route path="/round2" element={<Round2Manager />} />
           <Route path="/round2/leaderboard" element={<Leaderboard />} />
           <Route path="*" element={<NotFound />} />
