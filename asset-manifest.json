@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/fourth_wing_round2.0/static/css/main.0c275896.css",
-    "main.js": "/fourth_wing_round2.0/static/js/main.17d95173.js",
-    "static/media/fontawesome-webfont.svg?v=4.7.0": "/fourth_wing_round2.0/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
-    "static/media/fontawesome-webfont.eot": "/fourth_wing_round2.0/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
-    "static/media/fontawesome-webfont.ttf?v=4.7.0": "/fourth_wing_round2.0/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
-    "static/media/fontawesome-webfont.woff?v=4.7.0": "/fourth_wing_round2.0/static/media/fontawesome-webfont.f691f37e57f04c152e23.woff",
-    "static/media/fontawesome-webfont.woff2?v=4.7.0": "/fourth_wing_round2.0/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
-    "index.html": "/fourth_wing_round2.0/index.html",
-    "main.0c275896.css.map": "/fourth_wing_round2.0/static/css/main.0c275896.css.map",
-    "main.17d95173.js.map": "/fourth_wing_round2.0/static/js/main.17d95173.js.map"
+    "main.css": "/static/css/main.afe6ad09.css",
+    "main.js": "/static/js/main.15fbfb96.js",
+    "static/media/fontawesome-webfont.svg?v=4.7.0": "/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
+    "static/media/fontawesome-webfont.eot": "/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
+    "static/media/fontawesome-webfont.ttf?v=4.7.0": "/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
+    "static/media/fontawesome-webfont.woff?v=4.7.0": "/static/media/fontawesome-webfont.f691f37e57f04c152e23.woff",
+    "static/media/fontawesome-webfont.woff2?v=4.7.0": "/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
+    "index.html": "/index.html",
+    "main.afe6ad09.css.map": "/static/css/main.afe6ad09.css.map",
+    "main.15fbfb96.js.map": "/static/js/main.15fbfb96.js.map"
   },
   "entrypoints": [
-    "static/css/main.0c275896.css",
-    "static/js/main.17d95173.js"
+    "static/css/main.afe6ad09.css",
+    "static/js/main.15fbfb96.js"
   ]
 }
